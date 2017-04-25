@@ -1,0 +1,12 @@
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php|static|favicon\.ico|robots\.txt)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+</IfModule>
+#RewriteEngine on
+#RewriteCond $1 !^(index.php|static|favicon.ico|robots.txt)
+#RewriteRule ^(.*)$ /startblog/index.php/$1 [L]
